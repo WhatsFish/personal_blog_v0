@@ -1,137 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>love yu</title>
-	</head>
+<head>
+
+<meta charset="utf-8">
+
+<title>love yu</title>
 	<style>
-		*{
-			margin:0;
-		    padding:0;
-		    border:0;
-		    outline:0;
-		    font-size:100%;
-		    vertical-align:baseline;
-		    background:transparent;
-		    outline-style:none; 
+		body{
+			height: 800px;
+			background: radial-gradient(white,skyblue);   /*背景颜色*/
 		}
-		#heartText3{
-			position: absolute;
-			right: 0;
-			width:800px;
-			top: 0;
-			overflow: hidden;
-			font-size: 30px;
-			font-weight: 100;
-			color:black;
-			font-family:wst_ital;	
-			/*font-family:"courier new";*/
-			opacity: 0.6;	
-			/*text-shadow: 5px 1px 6px aqua;					*/		
+		.box{
+			margin:250px auto;
+			width: 600px;
+			height: 300px;
+			padding:50px 0 0 250px;
+			
 		}
-		#div{
-			margin-top: 0px;
-			background-image: url(img/timg.jpg);	
-			background-size:100% 100%;
-			background-repeat:no-repeat;
+			.box div {
+				float:left;
+				width: 200px;
+				height: 250px;
+				background-color: red;
+				border-radius: 99% 99% 0 0 ;
+			}
+	
+			.box:hover{
+				transform: scale(1.5,1.5);
+			}
+		.l{
+			transform: rotate(-62deg);
+		}
+		.r{
+			margin-left: -75px;
+			transform: rotate(62deg);
 		}
 	</style>
-	<body>
-		<div id="div">
-		 <pre id="heartText" style="display: none;"> 
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-谢妤我爱你
-  -李昊洋
-	 </pre>
-		 <pre id="heartText2"> </pre>			 
-		 <pre id="heartText4" style="display: none;"> 
-		
-	
-		 </pre>	 
-		 <pre id="heartText3"  > </pre>
-		</div>
-	</body>
-	 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script>
-		//随机颜色的方法
-		function randomColor(){
-			return parseInt(Math.random()*255);
-		}
-		//获取窗口的宽高
-		var width=$(Window).width();
-		var height=$(Window).height();
-		$("#div").css({
-			'height':height	,
-			'width':width
-		})
-		//代码部分手写效果
-		var value_dm=$("#heartText4").text();		
-		var count_dm=0;
-		var timer_dm=setInterval(function(){
-			count_dm+=3;
-			$("#heartText3").text(value_dm.substring(0,count_dm));	
-			var l1=parseInt($("#heartText3").text().length);
-			var l2=parseInt(value_dm.length);			
-			if(l1==l2){
-				clearInterval(timer_dm);
-				clearInterval(timer_container);
-				$("#heartText3").remove();
-			}
-		},6)		
-		//代码所在的容器循环上移
-		var timer_container=setInterval(function(){
-			var t1=$("#heartText3").css("top").replace("px","");
-			$("#heartText3").css("top",(parseInt(t1)-500)+"px");			
-		},1800)
-		//文字部分的手写效果
-		var value=$("#heartText").text();
-		var count=0;
-		var timer=setInterval(function(){
-			count++;
-			$("#heartText2").text(value.substring(0,count));
-			$("#heartText2").css({
-				"color":"rgb("+randomColor()+","+randomColor()+","+randomColor()+")",
-				"fontSize":'40px',
-				'fontFamily':'楷体'
-			})
-			if(count>value.length){
-				clearInterval(timer)
-			}
-		},50)
-		//满天红心的随机漂浮的效果
-		setInterval(function(){			
-			var tem="<p>❤</p>";			
-			$("#div").append(tem);			
-			$("p").css({
-				"z-index": 9999,
-				'position':'absolute',								
-				'top':Math.random()*(height-180)+120,				
-				'left':Math.random()*(width-180)+40,
-				'color':"red",				
-				'fontSize':parseInt(Math.random()*20+20)+'px'
-			})	
-			var p_tem=$("p").css("fontSize").replace("px","");
-			$("p").animate({
-				'top':parseInt($("p").css("top"))-20,
-				'left':parseInt($("p").css("left"))+20,
-				'opacity':0,
-				'fontSize':(parseInt(p_tem)+(Math.random()*10+20))+'px'
-			},2500,function(){
-				$(this).empty()
-			})
-		},200)		
-	</script>
-</html>
+</head>
 
+<body>
+<h1> I LOVE XY</h1>
+	<div class="box">
+		<div class="l"></div>
+		<div class="r"></div>
+	</div>
+</body>
+</html>
