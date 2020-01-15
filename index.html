@@ -1,9 +1,45 @@
+<!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>love</title>
+	<style>
+		body{
+			height: 800px;
+			background: radial-gradient(white,skyblue);   /*背景颜色*/
+		}
+		.box{
+			margin:250px auto;
+			width: 600px;
+			height: 300px;
+			padding:50px 0 0 250px;
+			
+		}
+			.box div {
+				float:left;
+				width: 200px;
+				height: 250px;
+				background-color: red;
+				border-radius: 99% 99% 0 0 ;
+			}
+	
+			.box:hover{
+				transform: scale(1.5,1.5);
+			}
+		.l{
+			transform: rotate(-62deg);
+		}
+		.r{
+			margin-left: -75px;
+			transform: rotate(62deg);
+		}
+	</style>
+</head>
 
-<h1>   Hello World </h1>
-
-<h2> lhy's page </h2>
-
-
-
+<body>
+	<div class="box">
+		<div class="l"></div>
+		<div class="r"></div>
+	</div>
+</body>
 </html>
